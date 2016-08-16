@@ -20,9 +20,11 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git': Text("git"),
 
     'git amend': Text("git commit --amend") + Key("enter"),
-    'switch': Key("a-tab"),
+    'alt tab': Key("a-tab"),
     'chain mode': Text("./mods i2c.js -board sunstreaker.js -ctrl 1 -slave 0x55 -offset 0x0 -run 1 -offsetWidth 16 -mode 0 -dmaChain -packetNo 2 -packetSize 4") + Key("enter"),
     'edit chain': Text("./mods i2c.js -board sunstreaker.js -ctrl 1 -slave 0x55 -offset 0x0 -run 1 -offsetWidth 16 -mode 0 -dmaChain -packetNo 2 -packetSize 4"),
+    'set columns': Text("COLUMNS=150") + Key("enter"),
+    'export term': Text("export TERM=xterm") + Key("enter"),
     
     'terminator left': Key("a-left"),
     'terminator right': Key("a-right"),
@@ -64,7 +66,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'replace': Key("c-h"),
     'save': Key("c-s"),
 
-    'shell reload': Key("c-c") + Text("zsh") + Key("enter");,
+    'shell reload': Key("c-c") + Text("zsh") + Key("enter"),
     
     'windows copy': Key("c-c"),
     'windows paste': Key("c-v"),
@@ -73,13 +75,16 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
 
     'line delete' : Key("s-down, delete"), 
     'line select' : Key("s-down, c-c"), 
+
+    'waf run' : Key("./waf --run myndn") + Key("enter"), 
+
          
     
 
 
-    'alpha': Text("a"),
-    'bravo': Text("b"),
-    'charlie': Text("c"),
+    'letter alpha': Text("a"),
+    'letter bravo': Text("b"),
+    'letter charlie': Text("c"),
     'delta': Text("d"),
     'echo': Text("e"),
     'foxtrot': Text("f"),
