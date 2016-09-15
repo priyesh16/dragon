@@ -22,6 +22,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git amend': Text("git commit --amend") + Key("enter"),
     'alt tab': Key("a-tab"),
     'chain mode': Text("./mods i2c.js -board sunstreaker.js -ctrl 1 -slave 0x55 -offset 0x0 -run 1 -offsetWidth 16 -mode 0 -dmaChain -packetNo 2 -packetSize 4") + Key("enter"),
+    'setup terminal': Text("COLUMNS=150") + Key("enter"), Text("export TERM=xterm") + Key("enter"),
     'edit chain': Text("./mods i2c.js -board sunstreaker.js -ctrl 1 -slave 0x55 -offset 0x0 -run 1 -offsetWidth 16 -mode 0 -dmaChain -packetNo 2 -packetSize 4"),
     'set columns': Text("COLUMNS=150") + Key("enter"),
     'export term': Text("export TERM=xterm") + Key("enter"),
@@ -36,7 +37,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     
     'sublime find': Key("c-p"),
     'sublime escape': Key("esc"),
-    'git commit': Text("git commit") + Key("enter"),
+    'git commit': Text("git commit -m "),
     'git pull': Text("git pull") + Key("enter"),
     'git branches': Text("git branch -l") + Key("enter"),
     'git status': Text("git status") + Key("enter"),
@@ -53,7 +54,8 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'cancel': Key("c-c"),
     'page up': Key("up"),
     'page down': Key("down"),
-    
+    'hold alt' : Key("down"),
+    'tab' : Key("down"),
 
     'undo': Key("c-z"),
     'redo': Key("c-y"),
@@ -61,13 +63,19 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'copy': Key("c-c"),
     'paste': Key("c-v"),
     'find': Key("c-f"),
-    'search': Key("c-f"),
     'reverse search': Key("c-r"),
     'replace': Key("c-h"),
     'save': Key("c-s"),
 
     'shell reload': Key("c-c") + Text("zsh") + Key("enter"),
-    
+    'reload shell': Key("c-c") + Text("zsh") + Key("enter"),
+    'launch program': Key("c-q"),
+    'start switch' : Key("alt:down, tab"),
+    'tab' : Key("tab"),
+    'release' : Key("shift:up, ctrl:up, alt:up"),
+    'exit virtual' : Key("ctrl, alt"),
+
+
     'windows copy': Key("c-c"),
     'windows paste': Key("c-v"),
     'linux copy': Key("c-insert"),
@@ -76,10 +84,8 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'line delete' : Key("s-down, delete"), 
     'line select' : Key("s-down, c-c"), 
 
-    'waf run' : Key("./waf --run myndn") + Key("enter"), 
-
-         
-    
+    'waf run' : Text("./waf --run myndn") + Key("enter"),
+    'thesis'  : Text("cd /home/pri/ndnSIM/ns-3") + Key("enter"), 
 
 
     'letter alpha': Text("a"),
